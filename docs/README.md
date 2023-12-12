@@ -30,11 +30,11 @@
     - 3등: 5개 번호 일치 / 1,500,000원
     - 4등: 4개 번호 일치 / 50,000원
     - 5등: 3개 번호 일치 / 5,000원
-  - [ ] 당첨 내역 연산
+  - [x] 당첨 내역 연산
     - [x] 당첨 번호와 같은 번호의 개수 판별 - Lotto#countSameNumbers
     - [x] 특정 번호를 포함하고 있는지 확인 - Lotto#hasNumber
   - [x] 당첨 금액 연산 - WinningResult#getTotalPrize
-  - [ ] 당첨 내역 출력 
+  - [ ] 당첨 내역 반환 - LottoChecker#getLottoWinning
       - [x] "당첨 통계\n---" 출력 - OutputView#printWinningStats
         - [x] n개 일치 (n,000원) - n개 - OutputView#printWinningResult
 - [ ] 수익률 계산 - Calculator#calculateEarningRate

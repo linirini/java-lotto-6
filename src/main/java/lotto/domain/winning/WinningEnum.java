@@ -1,5 +1,6 @@
 package lotto.domain.winning;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public enum WinningEnum {
@@ -28,7 +29,12 @@ public enum WinningEnum {
         return sameNumberCount + WINNING_RESULT_PREFIX + prize + WINNING_RESULT_SUFFIX;
     }
 
-    public WinningEnum getWinningPrize(int count, boolean hasBonus) {
+    private String formatPrize(int prize){
+        DecimalFormat decimalFormat = new DecimalFormat("###,###");
+        return decimalFormat.format(prize);
+    }
+
+    public static WinningEnum getWinningPrize(int count, boolean hasBonus) {
         if (count == 5) {
             if (hasBonus) {
                 return SECOND_PRIZE;
