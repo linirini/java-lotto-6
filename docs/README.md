@@ -6,7 +6,7 @@
     - [x] 1000 단위로 나누어 떨어지지 않는 경우 Money#validate
     - [x] 0원 이하 입력한 경우 Money#validate
     - [ ] 숫자가 아닌 경우
-- [ ] 로또 발행 - Lotto & Lottos
+- [x] 로또 발행 - Lotto & Lottos
   - [x] 입력 받은 금액만큼 발행 LottoPublisher#publishLottoByMoney
     - [x] "n개를 구매했습니다." 출력 - OutputView#printLottosCount, Lottos#getLottosCount
     - [x] "[i, j, k]" 리스트 형식으로 출력 - OutputView#printLottos, Lottos#getLottosNumbers
@@ -30,7 +30,7 @@
     - 3등: 5개 번호 일치 / 1,500,000원
     - 4등: 4개 번호 일치 / 50,000원
     - 5등: 3개 번호 일치 / 5,000원
-  - [ ] 당첨 내역 연산
+  - [ ] 당첨 내역 연산 
     - [x] 당첨 번호와 같은 번호의 개수 판별 - Lotto#countSameNumbers
     - [x] 특정 번호를 포함하고 있는지 확인 - Lotto#hasNumber
   - [ ] 당첨 금액 연산 - WinningResult#getPrize

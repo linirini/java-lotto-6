@@ -1,5 +1,7 @@
 package lotto.domain.winning;
 
+import java.util.Arrays;
+
 public enum WinningEnum {
 
     FIRST_PRIZE(6, 2000000000),
@@ -24,5 +26,16 @@ public enum WinningEnum {
             return sameNumberCount + WINNING_RESULT_PREFIX + prize + WINNING_RESULT_SUFFIX;
         }
         return sameNumberCount + WINNING_RESULT_PREFIX + prize + WINNING_RESULT_SUFFIX;
+    }
+
+    public WinningEnum getWinningPrize(int count, boolean hasBonus) {
+        if (count == 5) {
+            if (hasBonus) {
+                return SECOND_PRIZE;
+            }
+            return THIRD_PRIZE;
+        }
+        return Arrays.stream(values())
+                .filter(winningEnum -> winningEnum.sameNumberCount == count).findFirst().get();
     }
 }
