@@ -24,7 +24,7 @@ public enum WinningEnum {
         this.prize = prize;
     }
 
-    public int getSameNumberCount() {
+    private int getSameNumberCount() {
         return sameNumberCount;
     }
 
