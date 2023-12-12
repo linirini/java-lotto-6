@@ -1,6 +1,7 @@
 package lotto.domain;
 
 import static lotto.util.ExceptionEnum.INVALID_MONEY_UNIT;
+import static lotto.util.ExceptionEnum.MONEY_UNDER_ZERO;
 
 public class Money {
 
@@ -14,7 +15,14 @@ public class Money {
     }
 
     private void validate(int amount) {
+        throwIfAmountUnderZero(amount);
         throwIfInvalidUnit(amount);
+    }
+
+    private void throwIfAmountUnderZero(int amount) {
+        if(amount<=0){
+            throw new IllegalArgumentException(MONEY_UNDER_ZERO.getMessage());
+        }
     }
 
     private void throwIfInvalidUnit(int amount) {
