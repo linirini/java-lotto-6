@@ -33,7 +33,7 @@ public class Lotto {
 
     private void throwIfInvalidNumberRange(List<Integer> numbers) {
         for (Integer number : numbers) {
-            if(number<START_NUMBER||number>END_NUMBER){
+            if (number < START_NUMBER || number > END_NUMBER) {
                 throw new IllegalArgumentException(INVALID_NUMBER_RANGE.getMessage())
             }
         }
@@ -41,16 +41,23 @@ public class Lotto {
 
     private void throwIfDuplicatedNumbers(List<Integer> numbers) {
         int uniqueCount = numbers.stream().collect(Collectors.toSet()).size();
-        if(numbers.size()!=uniqueCount){
+        if (numbers.size() != uniqueCount) {
             throw new IllegalArgumentException(DUPLICATED_NUMBERS.getMessage());
         }
     }
 
-    public int countSameNumbers(Lotto lotto){
-        return -1;
+    public int countSameNumbers(Lotto lotto) {
+        int sameCount = 0;
+        for (Integer number : lotto.numbers) {
+            if (this.numbers.contains(number)) {
+                sameCount++;
+            }
+        }
+        return sameCount;
     }
 
-    public boolean hasNumber(int number){
+    public boolean hasNumber(int number) {
         return false;
     }
+
 }
