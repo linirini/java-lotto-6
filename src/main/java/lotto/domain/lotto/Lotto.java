@@ -1,5 +1,7 @@
 package lotto.domain.lotto;
 
+import static lotto.util.ExceptionEnum.INVALID_NUMBERS_SIZE;
+
 import java.util.List;
 
 public class Lotto {
@@ -17,7 +19,7 @@ public class Lotto {
 
     private void throwIfInvalidNumberSize(List<Integer> numbers) {
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(INVALID_NUMBERS_SIZE.getMessage());
         }
     }
 
