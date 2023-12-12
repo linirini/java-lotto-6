@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class LottoTest {
 
@@ -46,7 +47,20 @@ class LottoTest {
         Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
         Lotto comparison = new Lotto(List.of(n1, n2, n3, n4, n5, n6));
         assertThat(lotto.countSameNumbers(comparison)).isEqualTo(count);
+    }
 
+    @DisplayName("해당 번호를 가지고 있다.")
+    @ParameterizedTest
+    @ValueSource(ints = {1, 3, 5})
+    void 숫자_포함(int number) {
+        assertThat(new Lotto(List.of(1, 2, 3, 4, 5, 6)).hasNumber(number)).isTrue();
+    }
+
+    @DisplayName("해당 번호를 가지고 있지 않다.")
+    @ParameterizedTest
+    @ValueSource(ints = {11, 13, 15})
+    void 숫자_미포함(int number) {
+        assertThat(new Lotto(List.of(1, 2, 3, 4, 5, 6)).hasNumber(number)).isFalse();
     }
 
 }
