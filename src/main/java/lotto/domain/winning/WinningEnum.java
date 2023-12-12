@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public enum WinningEnum {
 
-    NONE(0,0),
+    NONE(0, 0),
     FIRST_PRIZE(6, 2000000000),
     SECOND_PRIZE(5, 30000000),
     THIRD_PRIZE(5, 1500000),
@@ -24,14 +24,23 @@ public enum WinningEnum {
         this.prize = prize;
     }
 
+    public int getSameNumberCount() {
+        return sameNumberCount;
+    }
+
+    public int getPrize() {
+        return prize;
+    }
+
     public String getWinningInfo() {
         if (this == SECOND_PRIZE) {
-            return sameNumberCount + WINNING_WITH_BONUS_RESULT_PREFIX + formatPrize(prize) + WINNING_RESULT_SUFFIX;
+            return sameNumberCount + WINNING_WITH_BONUS_RESULT_PREFIX + formatPrize(prize)
+                    + WINNING_RESULT_SUFFIX;
         }
         return sameNumberCount + WINNING_RESULT_PREFIX + formatPrize(prize) + WINNING_RESULT_SUFFIX;
     }
 
-    private String formatPrize(int prize){
+    private String formatPrize(int prize) {
         DecimalFormat decimalFormat = new DecimalFormat("###,###");
         return decimalFormat.format(prize);
     }
@@ -47,8 +56,14 @@ public enum WinningEnum {
                 .filter(winningEnum -> winningEnum.sameNumberCount == count).findAny().orElse(NONE);
     }
 
-    public int getPrize() {
-        return prize;
+    private static final Comparator<WinningEnum> COMPARATOR = Comparator
+            .comparingInt(WinningEnum::getSameNumberCount)
+            .thenComparingInt(WinningEnum::getPrize);
+
+    public static WinningEnum[] sortedValues() {
+        WinningEnum[] values = values();
+        Arrays.sort(values, COMPARATOR);
+        return values;
     }
 
 }

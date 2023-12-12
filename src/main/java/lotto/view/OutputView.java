@@ -1,5 +1,6 @@
 package lotto.view;
 
+import static lotto.domain.winning.WinningEnum.NONE;
 import static lotto.view.OutputEnum.EARNING_RATE_OUTPUT;
 import static lotto.view.OutputEnum.LOTTOS_COUNT_OUTPUT;
 import static lotto.view.OutputEnum.WINNING_RESULT_OUTPUT;
@@ -28,11 +29,12 @@ public class OutputView {
     }
 
     public void printWinningResult(WinningResult winningResult) {
-        for (Entry<WinningEnum, Integer> entry : winningResult.getWinnings()
-                .entrySet()) {
-            System.out.println(
-                    WINNING_RESULT_OUTPUT.getWinningResultMessage(entry.getKey().getWinningInfo(),
-                            entry.getValue()));
+        for (WinningEnum winningEnum : WinningEnum.sortedValues()) {
+            if (winningEnum != NONE) {
+                System.out.println(
+                        WINNING_RESULT_OUTPUT.getWinningResultMessage(winningEnum.getWinningInfo(),
+                                winningResult.getWinnings().get(winningEnum)));
+            }
         }
     }
 
