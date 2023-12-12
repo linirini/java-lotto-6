@@ -6,7 +6,6 @@ import static lotto.view.OutputEnum.LOTTOS_COUNT_OUTPUT;
 import static lotto.view.OutputEnum.WINNING_RESULT_OUTPUT;
 import static lotto.view.OutputEnum.WINNING_STATS_OUTPUT;
 
-import java.util.Map.Entry;
 import lotto.domain.lotto.Lottos;
 import lotto.domain.winning.WinningEnum;
 import lotto.domain.winning.WinningResult;

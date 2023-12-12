@@ -37,7 +37,7 @@
   - [x] 당첨 내역 반환 - LottoChecker#getLottoWinning
       - [x] "당첨 통계\n---" 출력 - OutputView#printWinningStats
         - [x] n개 일치 (n,000원) - n개 - OutputView#printWinningResult
-- [ ] 수익률 계산 - Calculator#calculateEarningRate
+- [x] 수익률 계산 - Calculator#calculateEarningRate
   - [x] "총 수익률은 00.0%입니다." 출력 - OutputView#printEarningRates
   - [x] 소수점 둘째 자리에서 반올림
   - [x] 구입 금액 대비 상금액
