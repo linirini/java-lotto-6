@@ -7,10 +7,10 @@
     - [x] 0원 이하 입력한 경우 Money#validate
     - [ ] 숫자가 아닌 경우
 - [ ] 로또 발행 - Lotto & Lottos
-  - [ ] 입력 받은 금액만큼 발행 LottoPublisher#publishLottoByMoney
+  - [x] 입력 받은 금액만큼 발행 LottoPublisher#publishLottoByMoney
     - [x] "n개를 구매했습니다." 출력 - OutputView#printLottosCount, Lottos#getLottosCount
     - [x] "[i, j, k]" 리스트 형식으로 출력 - OutputView#printLottos, Lottos#getLottosNumbers
-  - [ ] 1~45 중복되지 않는 6개 숫자 - RandomNumberGenerator#create6RandomNumbers
+  - [x] 1~45 중복되지 않는 6개 숫자 - RandomNumberGenerator#create6RandomNumbers
       - `List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);` 라이브러리 사용
 - [ ] 당첨 번호 입력 - WinningNumbers#Lotto
   - [x] "당첨 번호를 입력해 주세요." 출력 - InputView#inputWinningLotto
