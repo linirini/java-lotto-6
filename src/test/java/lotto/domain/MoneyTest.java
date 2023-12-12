@@ -15,4 +15,11 @@ class MoneyTest {
         assertThatThrownBy(() -> new Money(amount)).isInstanceOf(IllegalArgumentException.class);
     }
 
+    @DisplayName("1000원 단위가 아닌 금액을 입력할 경우 예외를 던진다.")
+    @ParameterizedTest
+    @ValueSource(ints = {100, 14500})
+    void _1000원_단위_아닌_예외(int amount) {
+        assertThatThrownBy(() -> new Money(amount)).isInstanceOf(IllegalArgumentException.class);
+    }
+
 }
