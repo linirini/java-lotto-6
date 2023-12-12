@@ -27,5 +27,12 @@ public class WinningNumbers {
         }
     }
 
+    public Lotto getLotto() {
+        return lotto;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
 
 }
