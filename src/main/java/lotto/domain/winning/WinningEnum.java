@@ -2,6 +2,7 @@ package lotto.domain.winning;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public enum WinningEnum {
 
@@ -25,9 +26,9 @@ public enum WinningEnum {
 
     public String getWinningInfo() {
         if (this == SECOND_PRIZE) {
-            return sameNumberCount + WINNING_RESULT_PREFIX + prize + WINNING_RESULT_SUFFIX;
+            return sameNumberCount + WINNING_WITH_BONUS_RESULT_PREFIX + formatPrize(prize) + WINNING_RESULT_SUFFIX;
         }
-        return sameNumberCount + WINNING_RESULT_PREFIX + prize + WINNING_RESULT_SUFFIX;
+        return sameNumberCount + WINNING_RESULT_PREFIX + formatPrize(prize) + WINNING_RESULT_SUFFIX;
     }
 
     private String formatPrize(int prize){
@@ -49,4 +50,5 @@ public enum WinningEnum {
     public int getPrize() {
         return prize;
     }
+
 }

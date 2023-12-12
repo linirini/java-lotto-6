@@ -1,5 +1,6 @@
 package lotto.controller;
 
+import static lotto.domain.winning.WinningEnum.NONE;
 import static lotto.util.ExceptionEnum.NOT_NUMBER;
 
 import java.util.ArrayList;
@@ -103,7 +104,8 @@ public class LottoManager {
     private List<WinningEnum> getLottoWinnings(Lottos lottos, WinningNumbers winningNumbers) {
         List<WinningEnum> lottoWinnings = new ArrayList<>();
         for (Lotto lotto : lottos.getLottos()) {
-            lottoWinnings.add(lottoChecker.getLottoWinning(lotto, winningNumbers));
+            WinningEnum result = lottoChecker.getLottoWinning(lotto, winningNumbers);
+            if(result!=NONE)lottoWinnings.add(result);
         }
         return lottoWinnings;
     }

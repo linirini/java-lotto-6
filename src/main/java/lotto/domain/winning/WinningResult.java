@@ -1,5 +1,7 @@
 package lotto.domain.winning;
 
+import static lotto.domain.winning.WinningEnum.NONE;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +20,9 @@ public class WinningResult {
     private HashMap<WinningEnum, Integer> initWinnings() {
         HashMap<WinningEnum, Integer> winnings = new HashMap<>();
         for (WinningEnum winningEnum : WinningEnum.values()) {
-            winnings.put(winningEnum, 0);
+            if(winningEnum!=NONE){
+                winnings.put(winningEnum, 0);
+            }
         }
         return winnings;
     }
