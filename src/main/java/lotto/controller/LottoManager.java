@@ -42,20 +42,12 @@ public class LottoManager {
 
     private Money getMoneyInputUntilNoError() {
         while (true) {
+            String input = inputView.inputMoney();
             try {
-                return new Money(getMoneyInput());
+                return new Money(convertToInteger(input));
             } catch (Exception e) {
                 outputView.printErrorMessage(e.getMessage());
             }
-        }
-    }
-
-    private int getMoneyInput() {
-        String input = inputView.inputMoney();
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException NFE) {
-            throw new IllegalArgumentException(NOT_NUMBER.getMessage());
         }
     }
 
@@ -68,16 +60,16 @@ public class LottoManager {
     private Lotto getWinningNumbersUntilNoError() {
         while (true) {
             outputView.printLineBreak();
+            String input = inputView.inputWinningLotto();
             try {
-                return new Lotto(getWinningNumbersInput());
+                return new Lotto(convertToNumbers(input));
             } catch (Exception e) {
                 outputView.printErrorMessage(e.getMessage());
             }
         }
     }
 
-    private List<Integer> getWinningNumbersInput() {
-        String input = inputView.inputWinningLotto();
+    private List<Integer> convertToNumbers(String input) {
         try {
             List<Integer> numbers = new ArrayList<>();
             Arrays.stream(input.split(",")).collect(Collectors.toList())
@@ -91,16 +83,16 @@ public class LottoManager {
     private Bonus getBonusNumberUntilNoError() {
         while (true) {
             outputView.printLineBreak();
+            String input = inputView.inputWinningBonus();
             try {
-                return new Bonus(getBonusNumber());
+                return new Bonus(convertToInteger(input));
             } catch (Exception e) {
                 outputView.printErrorMessage(e.getMessage());
             }
         }
     }
 
-    private int getBonusNumber() {
-        String input = inputView.inputWinningBonus();
+    private int convertToInteger(String input) {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException NFE) {
