@@ -13,8 +13,8 @@ public enum WinningEnum {
     private static final String WINNING_WITH_BONUS_RESULT_PREFIX = "개 일치, 보너스 볼 일치 (";
     private static final String WINNING_RESULT_PREFIX = "개 일치 (";
     private static final String WINNING_RESULT_SUFFIX = "원) - ";
-    private int sameNumberCount;
-    private int prize;
+    private final int sameNumberCount;
+    private final int prize;
 
     WinningEnum(int sameNumberCount, int prize) {
         this.sameNumberCount = sameNumberCount;
@@ -37,5 +37,9 @@ public enum WinningEnum {
         }
         return Arrays.stream(values())
                 .filter(winningEnum -> winningEnum.sameNumberCount == count).findFirst().get();
+    }
+
+    public int getPrize() {
+        return prize;
     }
 }
