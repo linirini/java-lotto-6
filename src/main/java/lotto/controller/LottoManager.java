@@ -77,9 +77,10 @@ public class LottoManager {
     }
 
     private List<Integer> getWinningNumbersInput() {
+        String input = inputView.inputWinningLotto();
         try {
             List<Integer> numbers = new ArrayList<>();
-            Arrays.stream(inputView.inputWinningLotto().split(",")).collect(Collectors.toList())
+            Arrays.stream(input.split(",")).collect(Collectors.toList())
                     .forEach(number -> numbers.add(Integer.parseInt(number)));
             return numbers;
         } catch (NumberFormatException NFE) {
@@ -99,8 +100,8 @@ public class LottoManager {
     }
 
     private int getBonusNumber() {
+        String input = inputView.inputWinningBonus();
         try {
-            String input = inputView.inputWinningBonus();
             return Integer.parseInt(input);
         } catch (NumberFormatException NFE) {
             throw new IllegalArgumentException(NOT_NUMBER.getMessage());
