@@ -2,29 +2,17 @@ package lotto.domain.winning;
 
 import static lotto.util.ExceptionEnum.INVALID_NUMBER_RANGE;
 
+import lotto.domain.lotto.Bonus;
 import lotto.domain.lotto.Lotto;
 
 public class WinningNumbers {
 
-    private static final int START_NUMBER = 1;
-    private static final int END_NUMBER = 45;
     private final Lotto lotto;
-    private final int bonus;
+    private final Bonus bonus;
 
-    public WinningNumbers(Lotto lotto, int bonus) {
-        validate(bonus);
+    public WinningNumbers(Lotto lotto, Bonus bonus) {
         this.lotto = lotto;
         this.bonus = bonus;
-    }
-
-    private void validate(int bonus) {
-        throwIfInvalidBonusNumberRange(bonus);
-    }
-
-    private void throwIfInvalidBonusNumberRange(int bonus) {
-        if (bonus < START_NUMBER || bonus > END_NUMBER) {
-            throw new IllegalArgumentException(INVALID_NUMBER_RANGE.getMessage());
-        }
     }
 
     public Lotto getLotto() {
@@ -32,7 +20,7 @@ public class WinningNumbers {
     }
 
     public int getBonus() {
-        return bonus;
+        return bonus.getBonusNumber();
     }
 
 }
