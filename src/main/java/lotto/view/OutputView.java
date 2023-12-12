@@ -36,8 +36,16 @@ public class OutputView {
         }
     }
 
-    public void printEarningRates(double rate) {
+    public void printEarningRates(String rate) {
         System.out.println(EARNING_RATE_OUTPUT.getEarningRateMessage(rate));
+    }
+
+    public void printErrorMessage(String message) {
+        System.out.println(message);
+    }
+
+    public void printLineBreak() {
+        System.out.println();
     }
 
 }

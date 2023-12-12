@@ -6,7 +6,8 @@ public enum ExceptionEnum {
     INVALID_MONEY_UNIT("1000원 단위로 나누어 떨어지지 않습니다."),
     INVALID_NUMBERS_SIZE("로또 번호는 6개입니다."),
     INVALID_NUMBER_RANGE("번호는 1~45 사이 숫자여야 합니다."),
-    DUPLICATED_NUMBERS("중복된 번호를 입력할 수 없습니다.");
+    DUPLICATED_NUMBERS("중복된 번호를 입력할 수 없습니다."),
+    NOT_NUMBER("숫자 형식이 아닙니다.");
 
     private static final String ERROR = "[ERROR] ";
     private String message;

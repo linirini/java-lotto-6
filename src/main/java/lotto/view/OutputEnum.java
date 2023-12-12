@@ -32,7 +32,7 @@ public enum OutputEnum {
         return winningInfo+count+COUNT_UNIT_OUTPUT;
     }
 
-    public String getEarningRateMessage(double rate){
+    public String getEarningRateMessage(String rate){
         return EARNING_RATE_OUTPUT_PREFIX + rate + EARNING_RATE_OUTPUT_SUFFIX;
     }
 
