@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public enum WinningEnum {
 
+    NONE(0,0),
     FIRST_PRIZE(6, 2000000000),
     SECOND_PRIZE(5, 30000000),
     THIRD_PRIZE(5, 1500000),
@@ -42,7 +43,7 @@ public enum WinningEnum {
             return THIRD_PRIZE;
         }
         return Arrays.stream(values())
-                .filter(winningEnum -> winningEnum.sameNumberCount == count).findFirst().get();
+                .filter(winningEnum -> winningEnum.sameNumberCount == count).findAny().orElse(NONE);
     }
 
     public int getPrize() {
