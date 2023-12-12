@@ -63,4 +63,11 @@ class LottoTest {
         assertThat(new Lotto(List.of(1, 2, 3, 4, 5, 6)).hasNumber(number)).isFalse();
     }
 
+    @DisplayName("숫자들을 문자열 형태로 반환한다.")
+    @Test
+    void 숫자_문자열_반환() {
+        assertThat(new Lotto(List.of(1, 2, 3, 4, 5, 6)).getNumbers()).isEqualTo(
+                "[1, 2, 3, 4, 5, 6]");
+    }
+
 }
