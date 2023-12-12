@@ -16,7 +16,9 @@
   - [x] "당첨 번호를 입력해 주세요." 출력 - InputView#inputWinningLotto
   - 당첨 번호 입력 : 쉼표 구분
     - [ ] 숫자가 아닌 경우
-    - [ ] 1~45 중복되지 않는 6개 숫자 - Lotto#validate
+    - [x] 6개 숫자 - Lotto#validate
+    - [ ] 1~45 사이 숫자 - Lotto#validate
+    - [ ] 중복되지 않는 숫자 - Lotto#validate
 - [ ] 보너스 번호 입력 - WinningNumbers#bonus
   - [x] "보너스 번호를 입력해 주세요." 출력 - InputView#inputWinningBonus
     - [ ] 숫자가 아닌 경우
