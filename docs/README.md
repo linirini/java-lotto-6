@@ -22,7 +22,7 @@
 - [ ] 보너스 번호 입력 - WinningNumbers#bonus
   - [x] "보너스 번호를 입력해 주세요." 출력 - InputView#inputWinningBonus
     - [ ] 숫자가 아닌 경우
-    - [ ] 1~45 사이 1개 숫자 - WinningNumbers#validate
+    - [x] 1~45 사이 1개 숫자 - WinningNumbers#validate
 - [ ] 당첨 내역 - WinningResult
   - [x] 당첨 결과 목록 - WinningEnum
     - 1등: 6개 번호 일치 / 2,000,000,000원

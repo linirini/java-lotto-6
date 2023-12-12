@@ -34,7 +34,7 @@ public class Lotto {
     private void throwIfInvalidNumberRange(List<Integer> numbers) {
         for (Integer number : numbers) {
             if (number < START_NUMBER || number > END_NUMBER) {
-                throw new IllegalArgumentException(INVALID_NUMBER_RANGE.getMessage())
+                throw new IllegalArgumentException(INVALID_NUMBER_RANGE.getMessage());
             }
         }
     }
