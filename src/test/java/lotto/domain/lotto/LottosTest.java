@@ -1,6 +1,7 @@
 package lotto.domain.lotto;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
@@ -18,10 +19,20 @@ class LottosTest {
 
     @DisplayName("로또 개수를 반환한다.")
     @Test
-    void 로또_개수_반환(){
+    void 로또_개수_반환() {
         Lottos lottos = getLottos();
         assertThat(lottos.getLottosCount()).isEqualTo(2);
     }
+
+    @DisplayName("로또 목록을 수장 불가능한 형태로 반환한다.")
+    @Test
+    void 불변_로또_반환() {
+        Lottos lottos = getLottos();
+        assertThatThrownBy(
+                () -> lottos.getLottos().add(new Lotto(List.of(1, 2, 3, 4, 5, 6)))).isInstanceOf(
+                Exception.class);
+    }
+
 
     private static Lottos getLottos() {
         Lottos lottos = new Lottos(List.of(new Lotto(List.of(1, 2, 3, 4, 5, 6)),
