@@ -1,6 +1,8 @@
 package lotto.domain.winning;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class WinningResult {
 
@@ -13,6 +15,11 @@ public class WinningResult {
     public int getPrize(){
         return -1;
     }
+
+    public Map<WinningEnum, Integer> getWinnings() {
+        return Collections.unmodifiableMap(winnings);
+    }
+
 
 
 }

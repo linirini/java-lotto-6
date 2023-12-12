@@ -1,23 +1,23 @@
 # 🚀 기능 명세서
 
 - [ ] 로또 구입 금액 - Money
-  - [ ] "구입금액을 입력해 주세요." 출력 - InputView#inputMoney
+  - [x] "구입금액을 입력해 주세요." 출력 - InputView#inputMoney
   - [ ] 구입 금액 입력
     - [ ] 1000 단위로 나누어 떨어지지 않는 경우 Money#validate
     - [ ] 0원 이하 입력한 경우 Money#validate
 - [ ] 로또 발행 - Lotto & Lottos
   - [ ] 입력 받은 금액만큼 발행 LottoPublisher#publishLottoByMoney
-    - [ ] "n개를 구매했습니다." 출력 - OutputView#printLottosCount, Lottos#getLottosCount
-    - [ ] "[i, j, k]" 리스트 형식으로 출력 - OutputView#printLottos, Lottos#getLottosNumbers
+    - [x] "n개를 구매했습니다." 출력 - OutputView#printLottosCount, Lottos#getLottosCount
+    - [x] "[i, j, k]" 리스트 형식으로 출력 - OutputView#printLottos, Lottos#getLottosNumbers
   - [ ] 1~45 중복되지 않는 6개 숫자 - RandomNumberGenerator#create6RandomNumbers
       - `List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);` 라이브러리 사용
 - [ ] 당첨 번호 입력 - WinningNumbers#Lotto
-  - "당첨 번호를 입력해 주세요." 출력 - InputView#inputWinningLotto
+  - [x] "당첨 번호를 입력해 주세요." 출력 - InputView#inputWinningLotto
   - 당첨 번호 입력 : 쉼표 구분
     - [ ] 숫자가 아닌 경우
     - [ ] 1~45 중복되지 않는 6개 숫자 - Lotto#validate
 - [ ] 보너스 번호 입력 - WinningNumbers#bonus
-  - [ ] "보너스 번호를 입력해 주세요." 출력 - InputView#inputWinningBonus
+  - [x] "보너스 번호를 입력해 주세요." 출력 - InputView#inputWinningBonus
     - [ ] 숫자가 아닌 경우
     - [ ] 1~45 사이 1개 숫자 - WinningNumbers#validate
 - [ ] 당첨 내역 - WinningResult
@@ -32,10 +32,10 @@
     - [ ] 특정 번호를 포함하고 있는지 확인 - Lotto#hasNumber
   - [ ] 당첨 금액 연산 - WinningResult#getPrize
   - [ ] 당첨 내역 출력 
-      - [ ] "당첨 통계\n---" 출력 - OutputView#printWinningStats
-        - [ ] n개 일치 (n,000원) - n개 - OutputView#printWinningResult
+      - [x] "당첨 통계\n---" 출력 - OutputView#printWinningStats
+        - [x] n개 일치 (n,000원) - n개 - OutputView#printWinningResult
 - [ ] 수익률 계산 - Calculator#calculateEarningRate
-  - [ ] "총 수익률은 00.0%입니다." 출력 - OutputView#printEarningRates
+  - [x] "총 수익률은 00.0%입니다." 출력 - OutputView#printEarningRates
   - [ ] 소수점 둘째 자리에서 반올림
   - [ ] 구입 금액 대비 상금액
 
