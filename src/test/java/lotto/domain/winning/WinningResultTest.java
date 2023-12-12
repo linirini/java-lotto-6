@@ -26,6 +26,18 @@ class WinningResultTest {
                         .put(WinningEnum.FIFTH_PRIZE, 1)).isInstanceOf(Exception.class);
     }
 
+    @DisplayName("당첨 등수 별 개수가 올바르게 저장되어 있다.")
+    @Test
+    void 당첨_결과_및_개수() {
+        List<WinningEnum> winningEnums = getWinningEnums();
+        assertThat(new WinningResult(winningEnums).getWinnings()
+                .get(WinningEnum.THIRD_PRIZE)).isEqualTo(1);
+        assertThat(new WinningResult(winningEnums).getWinnings()
+                .get(WinningEnum.FIFTH_PRIZE)).isEqualTo(1);
+        assertThat(new WinningResult(winningEnums).getWinnings()
+                .get(WinningEnum.FIRST_PRIZE)).isEqualTo(0);
+    }
+
     private static List<WinningEnum> getWinningEnums() {
         List<WinningEnum> winningEnums = new ArrayList<>();
         winningEnums.add(WinningEnum.THIRD_PRIZE);
