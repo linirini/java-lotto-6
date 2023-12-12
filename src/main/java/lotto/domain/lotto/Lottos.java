@@ -16,7 +16,7 @@ public class Lottos {
     public List<String> getLottosNumbers(){
         List<String> lottosNumbers = new ArrayList<>();
         for (Lotto lotto : lottos) {
-            lottosNumbers.add(lotto.toString());
+            lottosNumbers.add(lotto.getNumbers());
         }
         return lottosNumbers;
     }
