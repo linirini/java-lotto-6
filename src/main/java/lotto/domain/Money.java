@@ -31,4 +31,8 @@ public class Money {
         }
     }
 
+    public int getAmount() {
+        return amount;
+    }
+
 }

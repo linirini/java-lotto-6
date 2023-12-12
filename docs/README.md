@@ -3,8 +3,9 @@
 - [ ] 로또 구입 금액 - Money
   - [x] "구입금액을 입력해 주세요." 출력 - InputView#inputMoney
   - [ ] 구입 금액 입력
-    - [ ] 1000 단위로 나누어 떨어지지 않는 경우 Money#validate
-    - [ ] 0원 이하 입력한 경우 Money#validate
+    - [x] 1000 단위로 나누어 떨어지지 않는 경우 Money#validate
+    - [x] 0원 이하 입력한 경우 Money#validate
+    - [ ] 숫자가 아닌 경우
 - [ ] 로또 발행 - Lotto & Lottos
   - [ ] 입력 받은 금액만큼 발행 LottoPublisher#publishLottoByMoney
     - [x] "n개를 구매했습니다." 출력 - OutputView#printLottosCount, Lottos#getLottosCount
