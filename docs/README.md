@@ -33,13 +33,13 @@
   - [ ] 당첨 내역 연산
     - [x] 당첨 번호와 같은 번호의 개수 판별 - Lotto#countSameNumbers
     - [x] 특정 번호를 포함하고 있는지 확인 - Lotto#hasNumber
-  - [x] 당첨 금액 연산 - WinningResult#getPrize
+  - [x] 당첨 금액 연산 - WinningResult#getTotalPrize
   - [ ] 당첨 내역 출력 
       - [x] "당첨 통계\n---" 출력 - OutputView#printWinningStats
         - [x] n개 일치 (n,000원) - n개 - OutputView#printWinningResult
 - [ ] 수익률 계산 - Calculator#calculateEarningRate
   - [x] "총 수익률은 00.0%입니다." 출력 - OutputView#printEarningRates
-  - [ ] 소수점 둘째 자리에서 반올림
-  - [ ] 구입 금액 대비 상금액
+  - [x] 소수점 둘째 자리에서 반올림
+  - [x] 구입 금액 대비 상금액
 
 # ✔리팩터링 todo

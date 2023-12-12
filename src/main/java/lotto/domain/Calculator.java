@@ -2,7 +2,9 @@ package lotto.domain;
 
 public class Calculator {
 
-    public double calculateEarningRate(int earnedAmount, int usedAmount){
-        return -1;
+    public String getEarningRate(int earnedAmount, int usedAmount) {
+        double rate = earnedAmount / usedAmount * 100;
+        return String.format(".1f", rate);
     }
+
 }

@@ -28,7 +28,7 @@ public class WinningResult {
         }
     }
 
-    public int getPrize() {
+    public int getTotalPrize() {
         int prize = 0;
         for (Entry<WinningEnum, Integer> entry : this.winnings.entrySet()) {
             prize += entry.getKey().getPrize() * entry.getValue();
