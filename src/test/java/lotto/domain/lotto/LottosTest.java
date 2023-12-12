@@ -16,6 +16,12 @@ class LottosTest {
                 .contains("[1, 2, 3, 4, 5, 6]", "[41, 42, 43, 44, 45, 36]");
     }
 
+    @DisplayName("로또 개수를 반환한다.")
+    @Test
+    void 로또_개수_반환(){
+        Lottos lottos = getLottos();
+        assertThat(lottos.getLottosCount()).isEqualTo(2);
+    }
 
     private static Lottos getLottos() {
         Lottos lottos = new Lottos(List.of(new Lotto(List.of(1, 2, 3, 4, 5, 6)),
