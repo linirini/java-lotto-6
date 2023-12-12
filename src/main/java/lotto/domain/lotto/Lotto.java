@@ -1,9 +1,11 @@
 package lotto.domain.lotto;
 
+import static lotto.util.ExceptionEnum.DUPLICATED_NUMBERS;
 import static lotto.util.ExceptionEnum.INVALID_NUMBERS_SIZE;
 import static lotto.util.ExceptionEnum.INVALID_NUMBER_RANGE;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lotto {
 
@@ -20,6 +22,7 @@ public class Lotto {
     private void validate(List<Integer> numbers) {
         throwIfInvalidNumberSize(numbers);
         throwIfInvalidNumberRange(numbers);
+        throwIfDuplicatedNumbers(numbers);
     }
 
     private void throwIfInvalidNumberSize(List<Integer> numbers) {
@@ -33,6 +36,13 @@ public class Lotto {
             if(number<START_NUMBER||number>END_NUMBER){
                 throw new IllegalArgumentException(INVALID_NUMBER_RANGE.getMessage())
             }
+        }
+    }
+
+    private void throwIfDuplicatedNumbers(List<Integer> numbers) {
+        int uniqueCount = numbers.stream().collect(Collectors.toSet()).size();
+        if(numbers.size()!=uniqueCount){
+            throw new IllegalArgumentException(DUPLICATED_NUMBERS.getMessage());
         }
     }
 
