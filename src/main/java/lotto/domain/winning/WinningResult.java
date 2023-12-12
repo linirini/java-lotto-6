@@ -2,6 +2,7 @@ package lotto.domain.winning;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -9,7 +10,7 @@ public class WinningResult {
 
     private final HashMap<WinningEnum, Integer> winnings;
 
-    public WinningResult(HashMap<WinningEnum, Integer> winnings) {
+    public WinningResult(List<WinningEnum> winnings) {
         this.winnings = initWinnings();
         updateWinnings(winnings);
     }
@@ -22,9 +23,9 @@ public class WinningResult {
         return winnings;
     }
 
-    private void updateWinnings(HashMap<WinningEnum, Integer> winnings) {
-        for (Entry<WinningEnum, Integer> entry : winnings.entrySet()) {
-            this.winnings.put(entry.getKey(), this.winnings.get(entry.getKey()) + 1);
+    private void updateWinnings(List<WinningEnum> winnings) {
+        for (WinningEnum winning : winnings) {
+            this.winnings.put(winning, this.winnings.get(winning) + 1);
         }
     }
 
